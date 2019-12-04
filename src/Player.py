@@ -1,6 +1,5 @@
-from PlayerAbstract import *
-from Ships import *
-from board import *
+from src.PlayerAbstract import *
+from src.Board import *
 
 
 class Player(PlayerAbstract):
