@@ -1,6 +1,8 @@
 from __future__ import annotations
 from typing import List, Tuple, Optional
 
+from src import Board
+
 CARRIER, C = 5, "C"
 BATTLESHIP, B = 4, "B"
 DESTROYER, D = 3, "D"
@@ -30,10 +32,10 @@ class PlayerAbstract:
 
     """
     name: str
-    board: PlayerBoard
+    board: Board
     enemy_ships_sunk: int
 
-    def __init__(self, name: str, board: PlayerBoard) -> None:
+    def __init__(self, name: str, board: Board) -> None:
         self.name = name
         self.board = board
         self.enemy_ships_sunk = 0
