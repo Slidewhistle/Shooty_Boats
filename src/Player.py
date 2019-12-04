@@ -27,7 +27,8 @@ class Player:
 
     def get_random_coordinates(self) -> tuple:
         """
-        Generates a random coordinate for the cpu player.
+        Generates a random coordinate for the cpu player to place a ship or
+        shoot a shot.
         """
         random_x = randint(0, 10)
         random_y = randint(0, 10)

@@ -42,16 +42,16 @@ class Game:
         move was made, False otherwise.
         """
         if self.turn is self.player1:
-            return self.player1.ask_for_coordinates()
+            return self.player1.select_target()
         return self.player2.get_random_coordinates()
 
-
-    def place(self) -> bool:
+    def place(self):
         """
         Have the player who's turn it is, make a "place_ship" move. Return True
         if the ship was placed, False otherwise.
         """
-        # TODO
+        self.player1.place_ships()
+        self.player2.place_ships()
 
     def is_game_over(self) -> bool:
         """
@@ -69,7 +69,7 @@ class Game:
         This runs the 1st stage of the game where both players place their ships
         on their ship board.
         """
-        # TODO
+        self.place()
 
     def battle_stage(self) -> None:
         """
