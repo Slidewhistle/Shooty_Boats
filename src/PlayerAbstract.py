@@ -2,6 +2,8 @@ from __future__ import annotations
 from typing import List, Tuple, Optional
 
 
+from src import Board
+
 CARRIER, C = 5, "C"
 BATTLESHIP, B = 4, "B"
 DESTROYER, D = 3, "D"
