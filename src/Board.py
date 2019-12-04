@@ -20,10 +20,8 @@ class Board:
         chose:
             The square player now selected
     """
-    rows: int
-    columns: int
     ship_location: list
-    board: dict
+    board: list
     chose: (int, int)
 
     def __init__(self):
@@ -60,5 +58,41 @@ class Board:
         returns the square last selected
         """
         return self.chose
+
+    def to_string(self):
+        """
+        returns string representation of board
+        """
+        s = ""
+        s += "  "
+        for  col in range(10):
+            s += col + " "
+
+        s += '\n'
+
+        s += " +"
+        for  col in range(10):
+            s += "-+"
+
+        s += '\n';
+
+        for row in range(10):
+            s += row + "|"
+            for col in range(10):
+                s += self.board[row][col].to_string + "|"
+
+            s += row + "\n"
+
+            s += " +";
+            for col in range(10):
+                s += "-+";
+            s += '\n';
+
+        s += "  ";
+        for col in range(10):
+            s += col + " "
+        s += '\n';
+        return s;
+
 
 
