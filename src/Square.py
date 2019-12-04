@@ -55,15 +55,3 @@ class Square:
                 return "boomed nothing"
             else:
                 return "nothing"
-
-    def to_string(self):
-        """
-        returns a string representation of a square
-        """
-        if self.boats:
-            if self.boomed:
-                return "X"
-            else:
-                return "O"
-        else:
-            return " "
