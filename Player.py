@@ -10,17 +10,22 @@ PATROL_BOAT, P = 2, "P"
 
 DIMENSION = 10
 
+
 class Player(PlayerAbstract):
-    def __init__(self, name: str,board:Playerboard):
-
-        PlayerAbstract.__init__(self, name, board)
+    def __init__(self, board: Board):
+        """
+        Initializes a Player in ShootyBoats
+        """
+        self.board = board
         self.enemy_ships_sunk = 0
-        self.ships = []
-        self.shoot = False
 
-    # Overriding PlayerAbstract's place_ship method.
+    def ask_for_coordinates(self) -> tuple:
+        """
+        Asks the human player for coordinates
+        """
+        x = input("Enter")
+
     def place_ship(self, ship: Ships):
-
         for t in ship.coords_A:
             x = t[0]
             y = t[1]
@@ -29,34 +34,23 @@ class Player(PlayerAbstract):
 
         # TODO: create five ships class into self.ship list
 
-
-
-
-
     # Overriding PlayerAbstract's select_target method.
     def select_target(self, x, y):
-
         self.board.give_boomed(x, y)
 
-
     def get_hit(self, x, y):
-
         for ship in self.ships:
             for coord in ship.coords_A:
                 if coord[0] == x and coord[1] == y:
                     ship.hit(x,y)
-                    if ship.is_sunk == True:
+                    if ship.is_sunk is True:
                         self.enemy_ships_sunk += 1
 
-
-
     def take_hit(self, x, y):
-
         self.shoot = True
-        self.board.give_boomed(x,y)
+        self.board.give_boomed(x, y)
 
     def change_turns_player(self):
-
         self.shoot = False
 
 

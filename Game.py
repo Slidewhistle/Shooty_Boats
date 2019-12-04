@@ -83,7 +83,7 @@ class Game:
         other's boats.
         """
         # TODO
-        
+
     def run_game(self) -> None:
         """
         Runs this game of ShootyBoats.
@@ -95,3 +95,10 @@ class Game:
         Ends this game of ShootyBoats.
         """
         self.running = False
+
+    def get_move(self) -> tuple:
+        """
+        Get a move from the human player.
+        """
+        self.player1.getmove()
+

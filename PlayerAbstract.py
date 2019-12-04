@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import List, Tuple, Optional
 
+
 CARRIER, C = 5, "C"
 BATTLESHIP, B = 4, "B"
 DESTROYER, D = 3, "D"
@@ -12,9 +13,8 @@ DIMENSION = 10
 
 class PlayerAbstract:
     """
-    Capture a player for Sea Battle game.
-    To be used with Game class for ShootyBoats.
-    This is an abstract class, not to be instantiated directly.
+    Capture a player for Sea Battle game. To be used with Game class for
+    ShootyBoats. This is an abstract class, not to be instantiated directly.
 
     === Attributes ===
     name:
@@ -30,10 +30,10 @@ class PlayerAbstract:
 
     """
     name: str
-    board: PlayerBoard
+    board: Board
     enemy_ships_sunk: int
 
-    def __init__(self, name: str, board: PlayerBoard) -> None:
+    def __init__(self, name: str, board: Board) -> None:
         self.name = name
         self.board = board
         self.enemy_ships_sunk = 0
