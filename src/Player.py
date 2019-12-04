@@ -1,8 +1,7 @@
-from src.PlayerAbstract import *
 from src.Board import *
+from random import *
 
-
-class Player(PlayerAbstract):
+class Player:
     """
     This class represents the human player of ShootyBoats.
 
@@ -25,6 +24,15 @@ class Player(PlayerAbstract):
         x = input("Enter an x coordinate to:")
         y = input("Enter a y coordinate:")
         return x, y
+
+    def get_random_coordinates(self) -> tuple:
+        """
+        Generates a random coordinate for the cpu player.
+        """
+        random_x = randint(0, 10)
+        random_y = randint(0, 10)
+        return random_x, random_y
+
 
     def place_ships(self):
         """

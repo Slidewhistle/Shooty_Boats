@@ -11,8 +11,6 @@ class Game:
     === Public Attributes ===
     player1:
         The player that goes first.
-    player2:
-        The player that goes second.
     winner:
         The winner of the game, none if there are no winners yet.
     turn:
@@ -21,17 +19,15 @@ class Game:
         Whether this game is in progress or not.
     """
     player1: Player
-    player2: Player
     winner: Optional[Player]
     turn: Player
     running: bool
 
-    def __init__(self, player1: Player, player2: Player) -> None:
+    def __init__(self, player1: Player) -> None:
         """
         Initializes a game of ShootyBoats.
         """
         self.player1 = player1
-        self.player2 = player2
         self.winner = None  # no winners when initialized
         self.turn = player1  # player1 starts off the game, so they get 1st turn
         self.running = False  # set the game to "off"
@@ -61,16 +57,7 @@ class Game:
         else:
             return False
 
-    def other_player(self, player: Player) -> Player:
-        """
-        Returns the player other than <player>.
-        """
-        if player is self.player1:
-            return self.player2
-        else:
-            return self.player1
-
-    def ship_placing_stage(self) -> None:
+    def start_ship_placing_stage(self) -> None:
         """
         This runs the 1st stage of the game where both players place their ships
         on their ship board.
@@ -88,7 +75,7 @@ class Game:
         """
         Runs this game of ShootyBoats.
         """
-        # TODO
+
 
     def end_game(self) -> None:
         """
