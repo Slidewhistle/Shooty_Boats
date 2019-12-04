@@ -1,3 +1,5 @@
+from src.Square import *
+
 class Board:
     """
         This class represents the board in the game.
@@ -28,9 +30,9 @@ class Board:
 
         self.board = []
         for x in range(10):
-            self.board[x] = []
+            self.board.append([])
             for y in range(10):
-                self.board[x][y] = Square(x, y)
+                self.board[x].append(Square(x, y))
         self.chose = (0, 0)
 
     def get_square(self, x, y):
@@ -66,7 +68,7 @@ class Board:
         s = ""
         s += "  "
         for  col in range(10):
-            s += col + " "
+            s += str(col) + " "
 
         s += '\n'
 
@@ -77,11 +79,11 @@ class Board:
         s += '\n';
 
         for row in range(10):
-            s += row + "|"
+            s += str(row) + "|"
             for col in range(10):
-                s += self.board[row][col].to_string + "|"
+                s += self.board[row][col].to_string() + "|"
 
-            s += row + "\n"
+            s += str(row) + "\n"
 
             s += " +";
             for col in range(10):
@@ -90,7 +92,7 @@ class Board:
 
         s += "  ";
         for col in range(10):
-            s += col + " "
+            s += str(col) + " "
         s += '\n';
         return s;
 
