@@ -67,16 +67,16 @@ class Board:
         """
         s = ""
         s += "  "
-        for  col in range(10):
+        for col in range(10):
             s += str(col) + " "
 
         s += '\n'
 
         s += " +"
-        for  col in range(10):
+        for col in range(10):
             s += "-+"
 
-        s += '\n';
+        s += '\n'
 
         for row in range(10):
             s += str(row) + "|"
@@ -85,16 +85,16 @@ class Board:
 
             s += str(row) + "\n"
 
-            s += " +";
+            s += " +"
             for col in range(10):
-                s += "-+";
-            s += '\n';
+                s += "-+"
+            s += '\n'
 
-        s += "  ";
+        s += "  "
         for col in range(10):
             s += str(col) + " "
-        s += '\n';
-        return s;
+        s += '\n'
+        return s
 
 
 
