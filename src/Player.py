@@ -21,7 +21,7 @@ class Player:
         Asks the human player for coordinates.
         """
         print("Enter the coordinates where you want to place your ships:")
-        x = input("Enter an x coordinate to:")
+        x = input("Enter an x coordinate:")
         y = input("Enter a y coordinate:")
         return x, y
 
@@ -30,8 +30,8 @@ class Player:
         Generates a random coordinate for the cpu player to place a ship or
         shoot a shot.
         """
-        random_x = randint(0, 10)
-        random_y = randint(0, 10)
+        random_x = randint(0, 9)
+        random_y = randint(0, 9)
         return random_x, random_y
 
     def place_ships(self):
@@ -40,7 +40,7 @@ class Player:
         """
         for i in range(5):
             point = self.ask_for_coordinates()
-            self.board.put_boat(point[0], point[1])
+            self.board.put_boat(int(point[0]), int(point[1]))
 
     def place_ships_randomly(self):
         """
@@ -48,7 +48,7 @@ class Player:
         """
         for i in range(5):
             point = self.get_random_coordinates()
-            self.board.put_boat(point[0], point[1])
+            self.board.put_boat(int(point[0]), int(point[1]))
 
     def select_target(self) -> tuple:
         """
@@ -63,15 +63,15 @@ class Player:
         """
         Makes a move by consulting a human.
         """
-        move = self.ask_for_coordinates()
-        self.board.register_hit(move[0], move[1])
+        move = self.select_target()
+        self.board.register_hit(int(move[0]), int(move[1]))
 
     def make_random_move(self):
         """
         Makes random move.
         """
         move = self.get_random_coordinates()
-        self.board.register_hit(move[0], move[1])
+        self.board.register_hit(int(move[0]), int(move[1]))
 
 
 

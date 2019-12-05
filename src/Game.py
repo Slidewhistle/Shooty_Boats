@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import *
 from src.Player import Player
-import pygame
+
 
 
 class Game:
@@ -80,11 +80,10 @@ class Game:
                 self.player1.enemy_ships_sunk != 5:
 
             if self.turn is self.player1:
-                self.player1.board.to_string()
-                # display the other players board
+                print(self.player1.board.get_player_board_string())
+                print(self.player2.board.get_target_board_string())
                 self.player1.make_move()
-            self.player2.board.to_string()
-            # display the other player board
+
             self.player2.make_random_move()
 
     def run_game(self) -> None:
