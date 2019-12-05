@@ -1,5 +1,8 @@
+from __future__ import annotations
 from src.Board import *
 from random import *
+
+
 
 class Player:
     """
@@ -15,6 +18,7 @@ class Player:
         """
         self.board = board
         self.enemy_ships_sunk = 0
+        self.opponent = None
 
     def ask_for_coordinates(self) -> tuple:
         """
@@ -59,19 +63,25 @@ class Player:
         y = input("Enter a y coordinate:")
         return x, y
 
+    def add_opponent(self, opponent: Player):
+        """
+        Sets this player's opponent.
+        """
+        self.opponent = opponent
+
     def make_move(self):
         """
         Makes a move by consulting a human.
         """
         move = self.select_target()
-        self.board.register_hit(int(move[0]), int(move[1]))
+        self.opponent.board.register_hit(int(move[0]), int(move[1]))
 
     def make_random_move(self):
         """
         Makes random move.
         """
         move = self.get_random_coordinates()
-        self.board.register_hit(int(move[0]), int(move[1]))
+        self.opponent.board.register_hit(int(move[0]), int(move[1]))
 
 
 
