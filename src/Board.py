@@ -29,9 +29,9 @@ class Board:
     def __init__(self):
 
         self.board = []
-        for x in range(10):
+        for x in range(7):
             self.board.append([])
-            for y in range(10):
+            for y in range(7):
                 self.board[x].append(Square(x, y))
         self.chose = (0, 0)
 
@@ -67,31 +67,31 @@ class Board:
         """
         s = ""
         s += "  "
-        for col in range(10):
+        for col in range(7):
             s += str(col) + " "
 
         s += '\n'
 
         s += " +"
-        for col in range(10):
+        for col in range(7):
             s += "-+"
 
         s += '\n'
 
-        for row in range(10):
+        for row in range(7):
             s += str(row) + "|"
-            for col in range(10):
+            for col in range(7):
                 s += self.board[row][col].to_string() + "|"
 
             s += str(row) + "\n"
 
             s += " +"
-            for col in range(10):
+            for col in range(7):
                 s += "-+"
             s += '\n'
 
         s += "  "
-        for col in range(10):
+        for col in range(7):
             s += str(col) + " "
         s += '\n'
         return s
@@ -102,20 +102,20 @@ class Board:
         """
         s = ""
         s += "  "
-        for col in range(10):
+        for col in range(7):
             s += str(col) + " "
 
         s += '\n'
 
         s += " +"
-        for col in range(10):
+        for col in range(7):
             s += "-+"
 
         s += '\n'
 
-        for row in range(10):
+        for row in range(7):
             s += str(row) + "|"
-            for col in range(10):
+            for col in range(7):
                 if self.board[row][col].to_string() != "O":
                     s += self.board[row][col].to_string() + "|"
                 else:
@@ -124,12 +124,12 @@ class Board:
             s += str(row) + "\n"
 
             s += " +"
-            for col in range(10):
+            for col in range(7):
                 s += "-+"
             s += '\n'
 
         s += "  "
-        for col in range(10):
+        for col in range(7):
             s += str(col) + " "
         s += '\n'
         return s

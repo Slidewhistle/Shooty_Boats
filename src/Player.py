@@ -34,8 +34,8 @@ class Player:
         Generates a random coordinate for the cpu player to place a ship or
         shoot a shot.
         """
-        random_x = randint(0, 9)
-        random_y = randint(0, 9)
+        random_x = randint(0, 6)
+        random_y = randint(0, 6)
         return random_x, random_y
 
     def place_ships(self):
