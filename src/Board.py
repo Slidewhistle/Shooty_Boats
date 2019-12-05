@@ -116,7 +116,7 @@ class Board:
         for row in range(10):
             s += str(row) + "|"
             for col in range(10):
-                if self.board[row][col].to_string != "O":
+                if self.board[row][col].to_string() != "O":
                     s += self.board[row][col].to_string() + "|"
                 else:
                     s += " |"
