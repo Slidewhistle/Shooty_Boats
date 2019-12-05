@@ -3,7 +3,6 @@ from src.Board import *
 from random import *
 
 
-
 class Player:
     """
     This class represents the human player of ShootyBoats.
@@ -11,6 +10,10 @@ class Player:
     === Public Attributes ===
     board:
         The board that this player is playing on.
+    enemy_ships_sunk:
+        The amount of ships this player has sunk
+    opponent:
+        This players opponent
     """
     def __init__(self, board: Board):
         """
@@ -24,7 +27,8 @@ class Player:
         """
         Asks the human player for coordinates.
         """
-        print("Enter the coordinates where you want to place your ships (values should be between 0 and 6 (inclusive)):")
+        print("Enter the coordinates where you want to place your ships (values"
+              " should be between 0 and 6 (inclusive)):")
         x = input("Enter an x coordinate:")
         y = input("Enter a y coordinate:")
         return x, y
@@ -42,6 +46,7 @@ class Player:
         """
         Places all 5 ships on the board according to player's input.
         """
+        # loops 5 times and asks human for 5 coordinates to place their ships
         for i in range(5):
             point = self.ask_for_coordinates()
             self.board.put_boat(int(point[0]), int(point[1]))
@@ -50,6 +55,8 @@ class Player:
         """
         Places all 5 ships on the board randomly.
         """
+        # loops 5 times and generates 5 random coordinates to place
+        # CPU player's ships
         for i in range(5):
             point = self.get_random_coordinates()
             self.board.put_boat(int(point[0]), int(point[1]))
