@@ -57,6 +57,10 @@ Team P8 is a team of 2nd year computer science students at the University of Tor
 -	Thomas Mayer
 -	Manav Bhojak
 
+Contributions:
+- Thomas Mayer: Made the Board.py, Square.py, and debugged Player.py and Game.py. Also created the Documentation on the Wiki page and README file.
+- Manav Bhojak: Wrote the installation part for the README and Made the Play.py, Player.py, and Game.py.
+
 [Back to top](#top)
 
 ## <a name="license"></a>License Information
@@ -70,3 +74,4 @@ You can find a copy of the License at https://mit-license.org/
 License for them is in `Public Domain`
 
 [Back to top](#top)
+
