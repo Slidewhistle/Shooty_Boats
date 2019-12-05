@@ -24,7 +24,7 @@ class Player:
         """
         Asks the human player for coordinates.
         """
-        print("Enter the coordinates where you want to place your ships:")
+        print("Enter the coordinates where you want to place your ships (values should be between 0 and 6 (inclusive)):")
         x = input("Enter an x coordinate:")
         y = input("Enter a y coordinate:")
         return x, y
