@@ -39,7 +39,7 @@ class Board:
         """
         To got a square inside the board
         """
-        return self.dic[x][y]
+        return self.board[x][y]
 
 
 
