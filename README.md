@@ -18,8 +18,8 @@ all your games on a computer? If you answered yes to either of these questions, 
 
 Similar to the widely known game “Battleship”, Shooty Boats is a computer based board game with the objective of finding and sinking your enemies ships. The rules are quite simple. The player will get to choose the location of their five ships. After the players ships have been placed the game will begin. The player and CPU will take turns selecting coordinates to launch a “missile” at in an attempt to hit and sink their enemies ships. The winner is decided when either the player’s, or the CPU’s, ships have all sunk. 
 
-![Imgur](https://imgur.com/gallery/ekAaP9m.png)
-![Imgur](https://imgur.com/gallery/pHOqFcM.png)
+![Imgur](https://i.imgur.com/89DgRrV.png)
+![Imgur](https://i.imgur.com/koSRhTY.png)
 
 [Back to top](#top)
 
