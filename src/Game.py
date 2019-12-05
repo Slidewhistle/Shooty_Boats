@@ -71,19 +71,22 @@ class Game:
         """
         self.place()
 
-    def battle_stage(self) -> None:
+    def run_battle_stage(self) -> None:
         """
         This runs the 2nd stage of the game where both players battle each
         other's boats.
         """
-        # TODO
+        while self.running is True:
+            if self.turn is self.player1:
+                player1.make_move()
+            player2.make_random_move()
 
     def run_game(self) -> None:
         """
         Runs this game of ShootyBoats.
         """
         self.run_ship_placing_stage()
-        self.run_battle_stage
+        self.run_battle_stage()
 
 
     def end_game(self) -> None:
@@ -92,9 +95,4 @@ class Game:
         """
         self.running = False
 
-    def get_move(self) -> tuple:
-        """
-        Get a move from the human player.
-        """
-        self.player1.getmove()
 

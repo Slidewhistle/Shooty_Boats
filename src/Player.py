@@ -59,7 +59,19 @@ class Player:
         y = input("Enter a y coordinate:")
         return x, y
 
+    def make_move(self):
+        """
+        Makes a move by consulting a human.
+        """
+        move = self.ask_for_coordinates()
+        self.board.register_hit(move[0], move[1])
 
+    def make_random_move(self):
+        """
+        Makes random move.
+        """
+        move = self.get_random_coordinates()
+        self.board.register_hit(move[0], move[1])
 
 
 
