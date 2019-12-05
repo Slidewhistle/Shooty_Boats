@@ -24,8 +24,8 @@ Similar to the widely known game “Battleship”, Shooty Boats is a computer ba
 
 The game is currently entirely text-based with manual coordinate input.
 
-The console will display a 10x10 string grid with the enemies playerboard(locations hidden to player).
-- a valid coordinate is between 0 and 9 for both x and y.
+The console will display a 7x7 string grid with the enemies playerboard(locations hidden to player).
+- a valid coordinate is between 0 and 6 for both x and y.
 
 The game will display a game over message with the winner (player or CPU) when all of one players ships have been sunk   
 
