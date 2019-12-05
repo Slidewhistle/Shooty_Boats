@@ -45,25 +45,25 @@ class Board:
 
     def register_hit(self, x, y):
         """
-        Hit the square
+        Hit the square.
         """
         self.get_square(x, y).give_boomed()
 
     def put_boat(self, x, y):
         """
-        Put board on the square
+        Put board on the square.
         """
         self.get_square(x, y).put_boat()
 
     def get_chose(self):
         """
-        returns the square last selected
+        Returns the square last selected.
         """
         return self.chose
 
-    def to_string(self):
+    def get_player_board_string(self):
         """
-        returns string representation of board
+        Returns string representation of board.
         """
         s = ""
         s += "  "
@@ -95,6 +95,45 @@ class Board:
             s += str(col) + " "
         s += '\n'
         return s
+
+    def get_target_board_string(self):
+        """
+        Returns string representation of enemies board.
+        """
+        s = ""
+        s += "  "
+        for col in range(10):
+            s += str(col) + " "
+
+        s += '\n'
+
+        s += " +"
+        for col in range(10):
+            s += "-+"
+
+        s += '\n'
+
+        for row in range(10):
+            s += str(row) + "|"
+            for col in range(10):
+                if self.board[row][col].to_string != "X":
+                    s += self.board[row][col].to_string() + "|"
+                else:
+                    s += " |"
+
+            s += str(row) + "\n"
+
+            s += " +"
+            for col in range(10):
+                s += "-+"
+            s += '\n'
+
+        s += "  "
+        for col in range(10):
+            s += str(col) + " "
+        s += '\n'
+        return
+
 
 
 
