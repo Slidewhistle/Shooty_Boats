@@ -34,7 +34,7 @@ class Game:
         self.player2 = player2
         self.winner = None  # no winners when initialized
         self.turn = player1  # player1 starts off the game, so they get 1st turn
-        self.running = False  # set the game to "off"
+       # self.running = False  # set the game to "off"
 
     def get_shot_coordinates(self) -> tuple:
         """
@@ -76,10 +76,16 @@ class Game:
         This runs the 2nd stage of the game where both players battle each
         other's boats.
         """
-        while self.running is True:
+        while self.player1.enemy_ships_sunk != 5 or \
+                self.player1.enemy_ships_sunk != 5:
+
             if self.turn is self.player1:
-                player1.make_move()
-            player2.make_random_move()
+                self.player1.board.to_string()
+                # display the other players board
+                self.player1.make_move()
+            self.player2.board.to_string()
+            # display the other player board
+            self.player2.make_random_move()
 
     def run_game(self) -> None:
         """
@@ -88,11 +94,5 @@ class Game:
         self.run_ship_placing_stage()
         self.run_battle_stage()
 
-
-    def end_game(self) -> None:
-        """
-        Ends this game of ShootyBoats.
-        """
-        self.running = False
 
 
