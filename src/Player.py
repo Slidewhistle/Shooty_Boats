@@ -34,7 +34,6 @@ class Player:
         random_y = randint(0, 10)
         return random_x, random_y
 
-
     def place_ships(self):
         """
         Places all 5 ships on the board according to player's input.
@@ -43,7 +42,15 @@ class Player:
             point = self.ask_for_coordinates()
             self.board.put_boat(point[0], point[1])
 
-    def select_target(self):
+    def place_ships_randomly(self):
+        """
+        Places all 5 ships on the board randomly.
+        """
+        for i in range(5):
+            point = self.get_random_coordinates()
+            self.board.put_boat(point[0], point[1])
+
+    def select_target(self) -> tuple:
         """
         Asks the human player for coordinates.
         """

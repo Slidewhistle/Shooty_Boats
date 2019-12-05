@@ -51,7 +51,7 @@ class Game:
         if the ship was placed, False otherwise.
         """
         self.player1.place_ships()
-        self.player2.place_ships()
+        self.player2.place_ships_randomly()
 
     def is_game_over(self) -> bool:
         """
